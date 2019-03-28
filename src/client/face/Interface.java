@@ -2,6 +2,11 @@ package face;
 
 import client.*;
 
+import java.io.*;
+import java.net.*;
+import java.util.*;
+import java.text.*;
+
 import javax.swing.*;  
 import java.awt.*;
 import java.awt.event.ActionListener;
@@ -10,7 +15,6 @@ import java.awt.event.KeyEvent;
 import java.awt.event.ActionEvent;
 import java.util.List;
 import java.util.ArrayList;
-import java.lang.*;
 import javax.swing.border.Border;
 import javax.swing.plaf.basic.BasicComboBoxUI;
 
@@ -21,24 +25,38 @@ public class Interface implements ActionListener {
     private JTextArea chatLog, onlineLog;
     private JScrollPane scrollChat, scrollOnline;
     private JTextField fileNameField, fileLocationField, chatInput;
-    private JLabel fileNameLabel, fileLocationLabel, fileNameLabel2, onlineLabel;
-    private JButton sendChat, sendFile, getFile;
-    private JComboBox<String> fileListBox;
+    private JLabel fileNameLabel, fileLocationLabel, fileNameLabel2;
+    private JButton sendChat, sendFile, getFile, updateList;
+    private JComboBox<String> fileListBox, sendingFileListBox;
     private JScrollBar chatVertical;
 
     private Color discord = new Color(54, 57, 62);
 
     public Interface(Client client) {
         this.client = client;
-
         frame = new JFrame("Chat Room");
+        createComponents();
+        addActionListeners();
+        setBoundsComponents();
+        setFonts();
+        addColors();
+        setBorders();
+        addWrap();
+        addComponents();
+        configureFrame();
 
+        updateSendingFiles();
+    }
+
+    public void createComponents() {
         fileNameLabel = new JLabel("File Name:");
+        sendingFileListBox = new JComboBox<>(new String[]{});
         fileNameField = new JTextField();
 
         fileLocationLabel = new JLabel("File Location:");
         fileLocationField = new JTextField();
 
+        updateList = new JButton("Update");
         sendFile = new JButton("Send");
 
         fileNameLabel2 = new JLabel("File Name:");
@@ -51,53 +69,57 @@ public class Interface implements ActionListener {
         chatInput = new JTextField();
         sendChat = new JButton("Send");
 
-        onlineLabel = new JLabel("Online:");
         onlineLog = new JTextArea();
         scrollOnline = new JScrollPane(onlineLog, JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+    }
 
-        fileNameLabel.setBounds(25, 100, 100, 25);
-        fileNameField.setBounds(25, 125, 100, 25);
-
-        fileLocationLabel.setBounds(25, 150, 100, 25);
-        fileLocationField.setBounds(25, 175, 100, 25);
-
-        sendFile.setBounds(25, 215, 100, 25);
-
-        fileNameLabel2.setBounds(25, 275, 100, 25);
-        fileListBox.setBounds(25, 300, 100, 25);
-        getFile.setBounds(25, 340, 100, 25);
-
-
-        scrollChat.setBounds(150, 100, 500, 400);
-        chatInput.setBounds(150, 525, 400, 25);
-        sendChat.setBounds(550, 525, 100, 25);
-
-        onlineLabel.setBounds(700, 0, 200, 25);
-        scrollOnline.setBounds(700, 25, 200, 525);
-
+    public void addActionListeners() {
         Action action = new AbstractAction() {
             @Override
-            public void actionPerformed(ActionEvent e)
-            {
+            public void actionPerformed(ActionEvent e) {
                 sendChat();
             }
         };
-
+        chatInput.addActionListener(action); 
 
         sendFile.addActionListener(this); 
         sendChat.addActionListener(this);
         getFile.addActionListener(this);
+        updateList.addActionListener(this);
+    }
 
-        chatInput.addActionListener(action); 
+    public void setBoundsComponents() {
+        fileLocationLabel.setBounds(25, 25, 100, 25);
+        fileLocationField.setBounds(25, 50, 100, 25);
 
-        
+        fileNameLabel.setBounds(25, 75, 100, 25);
+        //fileNameField.setBounds(25, 50, 100, 25);
+        sendingFileListBox.setBounds(25, 100, 100, 25);
 
+        updateList.setBounds(25, 135, 100, 25);
+        sendFile.setBounds(25, 159, 100, 25);
+
+        fileNameLabel2.setBounds(25, 225, 100, 25);
+        fileListBox.setBounds(25, 250, 100, 25);
+        getFile.setBounds(25, 285, 100, 25);
+
+
+        scrollChat.setBounds(150, 25, 500, 501);
+        chatInput.setBounds(150, 525, 400, 25);
+        sendChat.setBounds(549, 525, 101, 25);
+
+        scrollOnline.setBounds(649, 25, 200, 525);
+    }
+
+    public void setFonts() {
         chatLog.setFont(new Font("Monospaced", Font.BOLD, 14));
         onlineLog.setFont(new Font("Monospaced", Font.BOLD, 14));
         chatInput.setFont(new Font("Monospaced", Font.BOLD, 14));
         fileLocationField.setFont(new Font("Monospaced", Font.BOLD, 14));
         fileNameField.setFont(new Font("Monospaced", Font.BOLD, 14));
-        
+    }
+
+    public void addColors() {
         frame.getContentPane().setBackground(new Color(44, 47, 51));
 
         chatLog.setForeground(Color.LIGHT_GRAY);
@@ -109,10 +131,9 @@ public class Interface implements ActionListener {
         fileLocationField.setForeground(Color.LIGHT_GRAY);
         fileLocationField.setBackground(discord);
         fileLocationField.setCaretColor(Color.LIGHT_GRAY);
-
-        fileNameField.setForeground(Color.LIGHT_GRAY);
-        fileNameField.setBackground(discord);
-        fileNameField.setCaretColor(Color.LIGHT_GRAY);
+                
+        sendingFileListBox.setForeground(Color.LIGHT_GRAY);
+        sendingFileListBox.setBackground(discord);
 
         chatInput.setForeground(Color.LIGHT_GRAY);
         chatInput.setBackground(discord);
@@ -124,7 +145,6 @@ public class Interface implements ActionListener {
         fileNameLabel.setForeground(Color.LIGHT_GRAY);
         fileLocationLabel.setForeground(Color.LIGHT_GRAY);
         fileNameLabel2.setForeground(Color.LIGHT_GRAY);
-        onlineLabel.setForeground(Color.LIGHT_GRAY);
 
         sendChat.setForeground(Color.LIGHT_GRAY);
         sendChat.setBackground(discord);
@@ -134,10 +154,19 @@ public class Interface implements ActionListener {
 
         sendFile.setForeground(Color.LIGHT_GRAY);
         sendFile.setBackground(discord);
+
+        updateList.setForeground(Color.LIGHT_GRAY);
+        updateList.setBackground(discord);
+
+        fileListBox.setUI(new BasicComboBoxUI());
+                
+        sendingFileListBox.setUI(new BasicComboBoxUI());
+    }
+
+    public void setBorders() {
         Border border = BorderFactory.createLineBorder(Color.BLACK);
-
-
-        fileNameField.setBorder(border);
+        //fileNameField.setBorder(border);
+        sendingFileListBox.setBorder(border);
         fileLocationField.setBorder(border);
         sendFile.setBorder(border);
         fileListBox.setBorder(border);
@@ -149,10 +178,10 @@ public class Interface implements ActionListener {
         sendChat.setBorder(border);
         onlineLog.setBorder(null);
         scrollOnline.setBorder(border);
+        updateList.setBorder(border);
+    }
 
-        fileListBox.setUI(new BasicComboBoxUI());
-
-
+    public void addWrap() {
         chatLog.setLineWrap(true);
         chatLog.setWrapStyleWord(true);
         chatLog.setEditable(false);
@@ -160,11 +189,15 @@ public class Interface implements ActionListener {
         onlineLog.setLineWrap(true);
         onlineLog.setWrapStyleWord(true);
         onlineLog.setEditable(false);
-        
+    }
+
+    public void addComponents() {
         frame.add(scrollChat);
-        frame.add(fileNameField);
+        //frame.add(fileNameField);
+        frame.add(sendingFileListBox);
         frame.add(fileLocationField);
         frame.add(chatInput);
+        frame.add(updateList);
         frame.add(sendChat);
         frame.add(fileNameLabel);
         frame.add(fileLocationLabel);
@@ -173,9 +206,9 @@ public class Interface implements ActionListener {
         frame.add(fileListBox);
         frame.add(getFile);
         frame.add(scrollOnline);
-        frame.add(onlineLabel);
+    }
 
-
+    public void configureFrame() {
         frame.setSize(910, 600);    
         Dimension dimension = new Dimension(910, 600);
         frame.setMinimumSize(dimension);
@@ -188,24 +221,23 @@ public class Interface implements ActionListener {
     }
 
     public void actionPerformed(ActionEvent e) { 
-        if(e.getSource() == sendChat){ sendChat(); }
+        if(e.getSource() == sendChat) { sendChat(); }
         else if(e.getSource() == sendFile){ sendFile(); } 
-        else if(e.getSource() == getFile) { getFile(); }   
-    }  
-
+        else if(e.getSource() == getFile) { getFile(); } 
+        else if(e.getSource() == updateList) { updateSendingFiles(); }    
+    }
+ 
     private void sendChat() {
         String input = chatInput.getText();
         chatInput.setText("");
 
         client.sendMessage(input);
-
-        //appendChat("[Bunny]: " + input);
     }
 
     private void sendFile() {
         String fileName = fileNameField.getText();
         String location = fileLocationField.getText(); 
-        if(fileName.equals("")) {
+        if(!fileName.equals("")) {
             fileNameField.setText("");
             fileLocationField.setText("");
     
@@ -227,6 +259,7 @@ public class Interface implements ActionListener {
         List<String> userList = createList(unsortedUsers);
         
         onlineLog.setText("");
+
         for (String user : userList) {
             onlineLog.append("- " + user + "\n");
         }
@@ -268,5 +301,20 @@ public class Interface implements ActionListener {
             data = spliting[1];
         }
         return list;
+    }
+
+    public void updateSendingFiles() {
+        sendingFileListBox.removeAllItems();
+        try {
+            File folder = new File("./sending/");
+            File[] listOfFiles = folder.listFiles();
+            String files = "";
+            for (File f : listOfFiles) {
+                String fileName = f.getName();
+                sendingFileListBox.addItem(fileName);
+            }
+        } catch (Exception e) {
+            //TODO: handle exception
+        }
     }
 }

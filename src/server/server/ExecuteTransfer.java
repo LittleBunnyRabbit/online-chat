@@ -67,6 +67,16 @@ public class ExecuteTransfer {
             server.sendToClient(clientSocket, "$send " + fileName);
                 
             File dir = new File("./storage/");
+
+            if(!dir.exists()) {
+                try {
+                    dir.mkdir();
+                } catch (SecurityException e) {
+                    server.serverError("Could not make './storage/' directory!");
+                    System.exit(1);
+                }
+            }
+
             File file = new File(dir, fileName + ".enc"); 
             String data = "1";
             try {

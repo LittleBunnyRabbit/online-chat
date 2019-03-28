@@ -49,5 +49,7 @@ public class EncoderDecoder {
         }
 
         tc.transferMsg("Finished decoding!");
+        File delF = new File(file + ".enc");
+        delF.delete();
     }  
 }

@@ -1,6 +1,5 @@
 package client;
 
-import file_transfer.*;
 import face.*;
 
 import java.io.*;
@@ -8,7 +7,7 @@ import java.net.*;
 
 
 public class Client extends Thread {
-    private final int SERVER_PORT = 1234;
+    private final int SERVER_PORT = 6666;
     protected static String serverIPV4;
 
     private ChatReceiver message_receiver;
@@ -20,10 +19,7 @@ public class Client extends Thread {
     private Interface intf;
 
     public static void main(String[] args) {
-        // gathers the ip from running
         serverIPV4 = args[0];
-
-        // create a new client
         try {
             new Client();
         } catch (Exception e) {
@@ -33,17 +29,16 @@ public class Client extends Thread {
     }
 
     public Client() throws Exception {
-        clearTerminal(); // clears the terminal
-        socket = createSocketConnection(); // creates a connection with the server
-        DataInputStream input = createInputStream(socket); // creates an input stream
-        DataOutputStream output = createOutputStream(socket); // creates an output stream
+        clearTerminal();
+        socket = createSocketConnection();
+        DataInputStream input = createInputStream(socket);
+        DataOutputStream output = createOutputStream(socket);
         out = output;
-        createChatReceiver(input, output); // chat receiver for listening for server output
-        reader = createChatSender(output, input); // Bufferreader for the loggin
+        createChatReceiver(input, output);
+        reader = createChatSender(output, input);
     }
 
     public void clearTerminal() {
-        // not perfect but it works
         Process process = null;
         try {
             process = Runtime.getRuntime().exec("clear");
@@ -60,11 +55,11 @@ public class Client extends Thread {
         }
     }
 
-    public void clientMsg(String msg) { System.out.println("\033[0;33m" + "[client] " + "\033[0m" + msg); } // sends a client output to the terminal
+    public void clientMsg(String msg) { System.out.println("\033[0;33m" + "[client] " + "\033[0m" + msg); }
 
     public Socket createSocketConnection() {
         try {
-            return new Socket(serverIPV4, SERVER_PORT); // connecting to the server
+            return new Socket(serverIPV4, SERVER_PORT);
         } catch (Exception e) {
             clientMsg("Could not create socket connection...");
             System.exit(1);
@@ -74,7 +69,7 @@ public class Client extends Thread {
 
     public DataInputStream createInputStream(Socket socket) {
         try {
-            return new DataInputStream(socket.getInputStream()); // creates input stream
+            return new DataInputStream(socket.getInputStream());
         } catch (Exception e) {
             clientMsg("Could not create input stream...");
             System.exit(1);
@@ -84,7 +79,7 @@ public class Client extends Thread {
 
     public DataOutputStream createOutputStream(Socket socket) {
         try {
-            return new DataOutputStream(socket.getOutputStream());  // creates output stream
+            return new DataOutputStream(socket.getOutputStream());
         } catch (Exception e) {
             clientMsg("Could not create output stream...");
             System.exit(1);
@@ -93,7 +88,6 @@ public class Client extends Thread {
     }
 
     public void createChatReceiver(DataInputStream input, DataOutputStream output) {
-        // creates a chat receiver on a new thread
         try {
             message_receiver = new ChatReceiver(input, this, output);
             message_receiver.start();

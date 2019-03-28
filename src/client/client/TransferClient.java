@@ -8,7 +8,7 @@ import java.lang.*;
 
 
 public class TransferClient extends Thread {
-    private final int SERVER_PORT = 1234;
+    private final int SERVER_PORT = 6666;
     private String serverIPV4;
 
     private Socket socket;
@@ -28,10 +28,32 @@ public class TransferClient extends Thread {
         createChatReceiver();
         sendMessage("$transferClient");
         sendMessage(String.valueOf(clientPort));
-        //reader = createChatSender();
+        createDirs();
     }
 
     public void transferMsg(String msg) { System.out.println("\033[0;33m" + "[transfer]: " + "\033[0m" + msg); }
+
+    public void createDirs() {
+        File dir = new File("./sending/");
+        if(!dir.exists()) {
+            try {
+                dir.mkdir();
+            } catch (SecurityException e) {
+                System.out.println("Could not make './sending/' directory!");
+                System.exit(1);
+            }
+        }
+
+        dir = new File("./receiving/");
+        if(!dir.exists()) {
+            try {
+                dir.mkdir();
+            } catch (SecurityException e) {
+                System.out.println("Could not make './sending/' directory!");
+                System.exit(1);
+            }
+        }
+    }
 
     public Socket createSocketConnection() {
         try {
@@ -81,7 +103,8 @@ public class TransferClient extends Thread {
 
         for (File f : listOfFiles) {
             String name = f.getName();
-            name = name.substring(0, name.length() - 4);
+            System.out.println(name);
+            name = name.substring(0, name.length());
             if(name.equals(fileName)) {
                 fileExists = true;
                 break;
@@ -178,6 +201,7 @@ public class TransferClient extends Thread {
             }
 
             sendMessage("$done");
+            file.delete();
 
         } catch (IOException e) {
             transferMsg("Failed to read file!");

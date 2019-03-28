@@ -11,7 +11,6 @@ public class ChatReceiver extends Thread {
 	private DataOutputStream output;
 	private Client client;
 	private Interface intf = null;
-	private final String SEND_PREFIX = "$send ";
 
 
 	public ChatReceiver(DataInputStream input, Client client, DataOutputStream output) {
@@ -44,31 +43,14 @@ public class ChatReceiver extends Thread {
 						break;
 
 					default:
-						/*
 						if(intf != null) { intf.appendChat(dataRecived); }
 						else { System.out.println(dataRecived); }
-						*/
-
 						break;
 				}
 				
 			} else {
-				/*
 				if(intf != null) { intf.appendChat(dataRecived); }
 				else { System.out.println(dataRecived); }
-				*/
-				if(intf != null && dataRecived != null && !dataRecived.equals("")) {
-					try {
-						File file = new File("./comm/test.txt");
-						BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));
-						if(file.length() != 0) { writer.newLine(); }
-						writer.append(SEND_PREFIX + dataRecived);
-						writer.close();
-					} catch (Exception e) {
-					}
-                } else {
-					System.out.println(dataRecived);
-				}
 			}
         }
 	}

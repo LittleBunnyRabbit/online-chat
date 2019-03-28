@@ -12,13 +12,16 @@ import java.text.*;
 
 
 public class Server {
-    public final int SERVER_PORT = 1234;
+    public final int SERVER_PORT = 6666;
     public final String SERVER_PASSWORD = "1111";
 
     private ColorList cl = new ColorList();
 
     public HashMap<Socket, Clients> clientList = new HashMap<>();
     public HashMap<Socket, Socket> clientsTransferList = new HashMap<>();
+
+    private SimpleDateFormat logFormat = new SimpleDateFormat("dd.MM.yyy_(HH:mm:ss)");
+    private String logName = "log_" + logFormat.format(new Date()).toString() + ".txt";
 
     public static void main(String[] args) { new Server(); }
 
@@ -45,8 +48,48 @@ public class Server {
         }
     }
 
-    public void serverMsg(String msg) { System.out.println(ConsoleColors.YELLOW + "[server] " + ConsoleColors.RESET + msg); }
-    public void serverError(String msg) { System.out.println(ConsoleColors.RED + "[error] " + msg + ConsoleColors.RESET); }
+    public void writeToLog(String msg) {
+        try {
+            File dir = new File("./log/");
+            if(!dir.exists()) {
+                try {
+                    dir.mkdir();
+                } catch (SecurityException e) {
+                    serverError("Could not make './log/' directory!");
+                    System.exit(1);
+                }
+            }
+
+            File file = new File(dir, logName);
+            if(file.exists()) {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file, true));   
+                if(file.length() != 0) { writer.newLine(); }
+                writer.append(msg);
+                writer.close();  
+            } else {
+                BufferedWriter writer = new BufferedWriter(new FileWriter(file));   
+                writer.append(msg);
+                writer.close();  
+            }
+   
+    
+        } catch (IOException e) {
+            serverError("Could not write to log");
+            System.exit(1);
+        }
+    }
+
+    public void serverMsg(String msg) { 
+        String fullMsg = ConsoleColors.YELLOW + "[server] " + ConsoleColors.RESET + msg;
+        System.out.println(fullMsg); 
+        writeToLog("[server] " + msg);
+    }
+
+    public void serverError(String msg) { 
+        String fullMsg = ConsoleColors.RED + "[error] " + msg + ConsoleColors.RESET;
+        System.out.println(fullMsg); 
+        writeToLog("[error] " + msg);
+    }
 
     public void serverLoggIn() {
         Scanner sc = new Scanner(System.in);
@@ -79,7 +122,7 @@ public class Server {
         try {
 			serverSocket.close();
 		} catch (IOException e) {
-			serverError("Couldnt close server socket\nShutting down...");
+            serverError("Couldnt close server socket\nShutting down...");
 			System.exit(1);
 		}
 
@@ -91,11 +134,17 @@ public class Server {
 			while (true) {
 				Socket newClientSocket = serverSocket.accept(); 
 				synchronized(this) {
-					setupClient(newClientSocket);
+                    try {
+                        setupClient(newClientSocket);
+                    } catch (Exception f) {
+                        serverError("Couldnt setup client");
+                        removeClient(newClientSocket);
+                    }
+					
 				}
 			}
 		} catch (Exception e) {
-			serverError("Couldnt connect to the client");
+            serverError("Couldnt connect to the client");
 			System.exit(1);
 		}
     }
@@ -156,6 +205,11 @@ public class Server {
 
                 } else {
                     removeClient(mcSocket);
+                    try {
+                        mcSocket.close();
+                    } catch (IOException e) {
+                        //TODO: handle exception
+                    }
                 }
                 
                 break;
@@ -213,19 +267,25 @@ public class Server {
     }
 
     public void sendToAllClients(Socket clientSocket, String msg) {
-        serverMsg(modifyUsername(clientSocket) + msg);
-        for(Map.Entry<Socket, Clients> entry : clientList.entrySet()) {
-            Socket socket = entry.getKey();
-            sendToClient(socket, modifyUsername(clientSocket) + msg);
-            sendToClient(clientsTransferList.get(socket), "[TransferClient] " + modifyUsername(clientSocket) + msg);
+        String username = modifyUsername(clientSocket);
+        if(username != null) {
+            serverMsg(username + msg);
+            for(Map.Entry<Socket, Clients> entry : clientList.entrySet()) {
+                Socket socket = entry.getKey();
+                sendToClient(socket, username + msg);
+                sendToClient(clientsTransferList.get(socket), "[TransferClient] " + username + msg);
+            }
         }
     }
 
     public void sendToAllClientsServer(Socket clientSocket, String msg) {
-        serverMsg(modifyUsername(clientSocket) + msg);
-        for(Map.Entry<Socket, Clients> entry : clientList.entrySet()) {
-            Socket socket = entry.getKey();
-            sendToClient(socket,"[server]: " + msg);
+        String username = modifyUsername(clientSocket);
+        if(username != null) {
+            serverMsg(username + msg);
+            for(Map.Entry<Socket, Clients> entry : clientList.entrySet()) {
+                Socket socket = entry.getKey();
+                sendToClient(socket,"[server]: " + msg);
+            }
         }
     }
 
@@ -241,7 +301,7 @@ public class Server {
             String name = clientList.get(clientSocket).getName();
             return "[" + name + "]: ";
         } else {
-            return "[unknown]: ";
+            return null;
         }    
     }
 
