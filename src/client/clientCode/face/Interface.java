@@ -31,6 +31,9 @@ public class Interface implements ActionListener {
     private JButton sendChat, sendFile, getFile, updateList;
     private JComboBox<String> fileListBox, sendingFileListBox;
     private JScrollBar chatVertical;
+    private JMenuBar menuBar;
+    private JMenu fonts, theme;
+    private JMenuItem mono, times, helv, light, dark;
 
     private Color discord = new Color(54, 57, 62);
 
@@ -40,14 +43,17 @@ public class Interface implements ActionListener {
         createComponents();
         addActionListeners();
         setBoundsComponents();
-        setFonts();
+        addMenu();
+        setFonts("Monospaced");
         addColors();
         setBorders();
         addWrap();
         addComponents();
+
         configureFrame();
 
         updateSendingFiles();
+
     }
 
     public void createComponents() {
@@ -113,12 +119,14 @@ public class Interface implements ActionListener {
         scrollOnline.setBounds(649, 25, 200, 525);
     }
 
-    public void setFonts() {
-        chatLog.setFont(new Font("Monospaced", Font.BOLD, 14));
-        onlineLog.setFont(new Font("Monospaced", Font.BOLD, 14));
-        chatInput.setFont(new Font("Monospaced", Font.BOLD, 14));
-        fileLocationField.setFont(new Font("Monospaced", Font.BOLD, 14));
-        fileNameField.setFont(new Font("Monospaced", Font.BOLD, 14));
+    public void setFonts(String font) {
+        chatLog.setFont(new Font(font, Font.BOLD, 14));
+        onlineLog.setFont(new Font(font, Font.BOLD, 14));
+        chatInput.setFont(new Font(font, Font.BOLD, 14));
+        fileLocationField.setFont(new Font(font, Font.BOLD, 14));
+        menuBar.setFont(new Font(font, Font.BOLD, 14));
+        fonts.setFont(new Font(font, Font.BOLD, 14));
+        theme.setFont(new Font(font, Font.BOLD, 14));
     }
 
     public void addColors() {
@@ -160,9 +168,71 @@ public class Interface implements ActionListener {
         updateList.setForeground(Color.LIGHT_GRAY);
         updateList.setBackground(discord);
 
+        menuBar.setForeground(Color.LIGHT_GRAY);
+        menuBar.setBackground(discord);
+
+        fonts.setForeground(Color.LIGHT_GRAY);
+        fonts.setBackground(discord);
+
+        theme.setForeground(Color.LIGHT_GRAY);
+        theme.setBackground(discord);
+
         fileListBox.setUI(new BasicComboBoxUI());
                 
         sendingFileListBox.setUI(new BasicComboBoxUI());
+    }
+
+    public void removeColors() {
+        frame.getContentPane().setBackground(null);
+
+        chatLog.setForeground(null);
+        chatLog.setBackground(null);
+
+        onlineLog.setForeground(null);
+        onlineLog.setBackground(null);
+
+        fileLocationField.setForeground(null);
+        fileLocationField.setBackground(null);
+        fileLocationField.setCaretColor(null);
+                
+        sendingFileListBox.setForeground(null);
+        sendingFileListBox.setBackground(null);
+
+        chatInput.setForeground(null);
+        chatInput.setBackground(null);
+        chatInput.setCaretColor(null);
+
+        fileListBox.setForeground(null);
+        fileListBox.setBackground(null);
+
+        fileNameLabel.setForeground(null);
+        fileLocationLabel.setForeground(null);
+        fileNameLabel2.setForeground(null);
+
+        sendChat.setForeground(null);
+        sendChat.setBackground(null);
+
+        getFile.setForeground(null);
+        getFile.setBackground(null);
+
+        sendFile.setForeground(null);
+        sendFile.setBackground(null);
+
+        updateList.setForeground(null);
+        updateList.setBackground(null);
+
+        menuBar.setForeground(null);
+        menuBar.setBackground(null);
+
+        fonts.setForeground(null);
+        fonts.setBackground(null);
+
+        theme.setForeground(null);
+        theme.setBackground(null);
+
+        fileListBox.setUI(null);
+                
+        sendingFileListBox.setUI(null);
     }
 
     public void setBorders() {
@@ -181,6 +251,10 @@ public class Interface implements ActionListener {
         onlineLog.setBorder(null);
         scrollOnline.setBorder(border);
         updateList.setBorder(border);
+        menuBar.setBorder(border);
+        fonts.setBorder(null);
+        theme.setBorder(null);
+
     }
 
     public void addWrap() {
@@ -210,6 +284,42 @@ public class Interface implements ActionListener {
         frame.add(scrollOnline);
     }
 
+    public void addMenu() {
+        String[] fon = new String[]{"TimesRoman", "Serif", "Helvetica", "SansSerif", "Courier", "Monospaced", "Dialog", "DialogInput"};
+        menuBar = new JMenuBar();
+
+        fonts = new JMenu("Font");
+        theme = new JMenu("Theme");
+
+        mono = new JMenuItem("Monospaced");
+        times = new JMenuItem("TimesRoman");
+        helv = new JMenuItem("Helvetica");
+
+        light = new JMenuItem("Light");
+        dark = new JMenuItem("Dark");
+
+
+        fonts.add(mono);
+        fonts.add(times);
+        fonts.add(helv);
+
+        theme.add(light);
+        theme.add(dark);
+
+        menuBar.add(fonts);
+        menuBar.add(theme);
+
+        frame.add(menuBar);
+        frame.setJMenuBar(menuBar);
+
+        mono.addActionListener(this); 
+        times.addActionListener(this); 
+        helv.addActionListener(this); 
+
+        light.addActionListener(this); 
+        dark.addActionListener(this); 
+    }
+
     public void configureFrame() {
         frame.setSize(910, 600);    
         Dimension dimension = new Dimension(910, 600);
@@ -226,7 +336,12 @@ public class Interface implements ActionListener {
         if(e.getSource() == sendChat) { sendChat(); }
         else if(e.getSource() == sendFile){ sendFile(); } 
         else if(e.getSource() == getFile) { getFile(); } 
-        else if(e.getSource() == updateList) { updateSendingFiles(); }    
+        else if(e.getSource() == updateList) { updateSendingFiles(); }
+        else if(e.getSource() == mono) { setFonts("Monospaced"); }
+        else if(e.getSource() == times) { setFonts("TimesRoman"); }
+        else if(e.getSource() == helv) { setFonts("Helvetica"); }
+        else if(e.getSource() == light) { removeColors(); }
+        else if(e.getSource() == dark) { addColors(); }
     }
  
     private void sendChat() {
