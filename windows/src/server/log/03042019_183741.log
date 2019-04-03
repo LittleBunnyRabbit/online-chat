@@ -1,0 +1,47 @@
+[server] Creating server
+[server] Listening for a client...
+[server] New client joined: 37238
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37238,localport=6666]
+[server] Added client:[0;36m
+> Username: ASd
+> Socket: Socket[addr=/192.168.1.213,port=37238,localport=6666]
+> Join Time: 03.37.2019 06:37:52[0m
+[server] [ASd]:  Joined the server...
+[server] Client connected! 37238
+[server] New client joined: 37240
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37240,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37238,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37240,localport=6666] [transfer][0m
+[server] TransferClient connected! 37240
+[server] Got a download request from: [ASd] for ''
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [ASd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37238
+[error] Couldnt send msg to client... Client: 37240
+[error] Couldnt send msg to client... Client: 37240
+[server] New client joined: 37320
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37320,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37320,localport=6666]
+> Join Time: 03.44.2019 06:44:40[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37320
+[server] New client joined: 37322
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37322,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37320,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37322,localport=6666] [transfer][0m
+[server] TransferClient connected! 37322
+[server] Got a send request from: [asd] for 'download.png'
+[server] [0;36mDownloading file to the server: : 'download.png' to [asd][0m
+[server] [0;36mFinished downloading file to the server: 'download.png' to [asd][0m
+[server] [asd]: New file added: download.png
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37322
+[error] Couldnt send msg to client... Client: 37320
+[error] Couldnt send msg to client... Client: 37322
