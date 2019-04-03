@@ -20,6 +20,7 @@ public class TransferClient extends Thread {
     //private BufferedReader reader;
     private TransferClientReceiver receiver;
     private Client client;
+    private String fullFileName = null;
 
     public TransferClient(String serverIPV4, int clientPort, Client client) throws Exception {
         this.serverIPV4 = serverIPV4;
@@ -98,35 +99,28 @@ public class TransferClient extends Thread {
         }
     }
 
-    public void reqToSendFile(String fileName) {
-        File folder = new File(CLIENT_SENDING_DIR);
-        File[] listOfFiles = folder.listFiles();
-        String files = "";
-        Boolean fileExists = false;
-
-        for (File f : listOfFiles) {
-            String name = f.getName();
-            System.out.println(name);
-            name = name.substring(0, name.length());
-            if(name.equals(fileName)) {
-                fileExists = true;
-                break;
-            }
-        }
-
-        if(fileExists) {
-            transferMsg("Requesting to send: " + fileName);
-            try {
-                output.writeUTF("$send " + fileName);
-                output.flush();
+    public void reqToSendFile(String fullFileName, String fileName) {
+        if(fullFileName != null) {
+            this.fullFileName = fullFileName;
+            File folder = new File(fullFileName);
     
-            } catch (IOException e) {
-                transferMsg("Could not send message...");
+            if(folder.exists()) {
+                transferMsg("Requesting to send: " + fileName);
+                try {
+                    output.writeUTF("$send " + fileName);
+                    output.flush();
+        
+                } catch (IOException e) {
+                    transferMsg("Could not send message...");
+                }
+            } else {
+                transferMsg("That file doesnt exist!");
             }
         } else {
-            transferMsg("That file doesnt exist!");
+            transferMsg("Allready sending file!");
+            clientInterfaceMsg("Allready sending file!");
+            System.out.println(fullFileName);
         }
-
     }
 
     public void reqToDownloadFile(String fileName) {
@@ -188,14 +182,13 @@ public class TransferClient extends Thread {
     }
     
     public void sendFile(String fileName) {
-        EncoderDecoder.encode(fileName, this);
+        EncoderDecoder.encode(fullFileName, fileName, this);
 
         transferMsg("Started reading file: " + fileName);
         clientInterfaceMsg("Started reading file: " + fileName);
 
         try {
-            File dir = new File(CLIENT_SENDING_DIR);
-            File file = new File(dir, fileName + ".enc");
+            File file = new File(fullFileName + ".enc");
 
             BufferedReader br = new BufferedReader(new FileReader(file));
             String str;
@@ -213,6 +206,7 @@ public class TransferClient extends Thread {
         sendMessage("$done");
         transferMsg("Finished reading file!");
         clientInterfaceMsg("Finished reading file!");
+        fullFileName = null;
     }
     
     public void downloadFile(String fileName) {

@@ -134,8 +134,8 @@ public class Client extends Thread {
         }
     }
 
-    public void sendFile(String fileName) {
-        tc.reqToSendFile(fileName);
+    public void sendFile(String fullFileName, String fileName) {
+        tc.reqToSendFile(fullFileName, fileName);
     }
 
     public void downloadFile(String fileName) {

@@ -5,20 +5,17 @@ import java.io.*;
 import java.util.*;
 
 public class EncoderDecoder {
-    private static final String CLIENT_SENDING_DIR = "./sending/";
     private static final String CLIENT_RECEIVING_DIR = "./receiving/";
 
-    public static void encode(String fileName, TransferClient tc) {
+    public static void encode(String fullFileName, String fileName, TransferClient tc) {
         tc.transferMsg("Started encoding: " + fileName);
         tc.clientInterfaceMsg("Started encoding: " + fileName);
 
-        File dir = new File(CLIENT_SENDING_DIR);
-        File file = new File(dir, fileName);
-        String fileWDir = file.toPath().toString();
+        File file = new File(fullFileName);
 
-        try(FileInputStream fileInput = new FileInputStream(fileWDir)) {
+        try(FileInputStream fileInput = new FileInputStream(file)) {
             Base64.Encoder encoder = Base64.getMimeEncoder();
-            OutputStream outputStream = encoder.wrap(new FileOutputStream(fileWDir + ".enc"));
+            OutputStream outputStream = encoder.wrap(new FileOutputStream(file + ".enc"));
             int _byte;
             while((_byte = fileInput.read()) != -1) {
                 outputStream.write(_byte);
