@@ -7,7 +7,7 @@ import java.net.*;
 
 
 public class Client extends Thread {
-    private final int SERVER_PORT = 6666;
+    private final int SERVER_PORT = 5555;
     protected static String serverIPV4;
 
     private ChatReceiver message_receiver;

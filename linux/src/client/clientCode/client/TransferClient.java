@@ -8,7 +8,7 @@ import java.lang.*;
 
 
 public class TransferClient extends Thread {
-    private final int SERVER_PORT = 6666;
+    private final int SERVER_PORT = 5555;
     private final String CLIENT_SENDING_DIR = "./sending/";
     private final String CLIENT_RECEIVING_DIR = "./receiving/";
 
