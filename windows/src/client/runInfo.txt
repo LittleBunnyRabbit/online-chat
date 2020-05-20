@@ -1,0 +1,5 @@
+Compile:
+    javac -classpath ./clientCode/ *.java -d bin
+
+Run:
+    java -cp ./bin/ Client 192.168.1.213

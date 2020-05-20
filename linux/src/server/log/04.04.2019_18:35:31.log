@@ -1,0 +1,22 @@
+[server] Creating server
+[server] Listening for a client...
+[server] New client joined: 54092
+[server] Setting up client: Socket[addr=/146.212.220.253,port=54092,localport=6666]
+[server] Added client:[0;36m
+> Username: Andraz
+> Socket: Socket[addr=/146.212.220.253,port=54092,localport=6666]
+> Join Time: 04.37.2019 06:37:18[0m
+[server] [Andraz]:  Joined the server...
+[server] Client connected! 54092
+[server] New client joined: 54142
+[server] Setting up transfer client: Socket[addr=/146.212.220.253,port=54142,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/146.212.220.253,port=54092,localport=6666] [client]
+> Socket[addr=/146.212.220.253,port=54142,localport=6666] [transfer][0m
+[server] TransferClient connected! 54142
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [Andraz]:  Left the server...
+[error] Couldnt send msg to client... Client: 54142
+[error] Couldnt send msg to client... Client: 54092
+[error] Couldnt send msg to client... Client: 54142

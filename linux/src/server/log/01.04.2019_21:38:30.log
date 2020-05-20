@@ -1,0 +1,504 @@
+[server] Creating server
+[server] Listening for a client...
+[server] New client joined: 40838
+[server] Setting up client: Socket[addr=/146.212.220.253,port=40838,localport=6666]
+[server] Added client:[0;36m
+> Username: Andraz
+> Socket: Socket[addr=/146.212.220.253,port=40838,localport=6666]
+> Join Time: 01.39.2019 09:39:08[0m
+[server] [Andraz]:  Joined the server...
+[server] Client connected! 40838
+[server] New client joined: 40842
+[server] Setting up transfer client: Socket[addr=/146.212.220.253,port=40842,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/146.212.220.253,port=40838,localport=6666] [client]
+> Socket[addr=/146.212.220.253,port=40842,localport=6666] [transfer][0m
+[server] TransferClient connected! 40842
+[server] [Andraz]: Haha
+[server] [Andraz]: Wazupp nigga
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [Andraz]:  Left the server...
+[error] Couldnt send msg to client... Client: 40842
+[error] Couldnt send msg to client... Client: 40838
+[error] Couldnt send msg to client... Client: 40842
+[server] New client joined: 37074
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37074,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37074,localport=6666]
+> Join Time: 01.53.2019 09:53:13[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37074
+[server] New client joined: 37076
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37076,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37074,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37076,localport=6666] [transfer][0m
+[server] TransferClient connected! 37076
+[server] [asd]: asdasdasd
+[server] [asd]: asdasd
+[server] [asd]: sda
+[server] [asd]: asd
+[server] [asd]: as
+[server] [asd]: d
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: s
+[server] [asd]: asdasdasd
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37076
+[error] Couldnt send msg to client... Client: 37074
+[error] Couldnt send msg to client... Client: 37076
+[server] New client joined: 37146
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37146,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37146,localport=6666]
+> Join Time: 01.59.2019 09:59:26[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37146
+[server] New client joined: 37148
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37148,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37146,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37148,localport=6666] [transfer][0m
+[server] TransferClient connected! 37148
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[error] Couldnt send msg to client... Client: 37148
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37146
+[error] Couldnt send msg to client... Client: 37148
+[server] New client joined: 37220
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37220,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37220,localport=6666]
+> Join Time: 01.03.2019 10:03:26[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37220
+[server] [asd]: asd
+[server] [asd]: asd
+[server] [asd]: asd
+[server] [asd]: asd
+[server] [asd]: asd
+[server] [asd]: sa
+[server] [asd]: das
+[server] [asd]: das
+[server] [asd]: das
+[server] [asd]: das
+[server] [asd]: s
+[server] [asd]: dsd
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[server] [asd]: d
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37220
+[server] New client joined: 37224
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37224,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37224,localport=6666]
+> Join Time: 01.04.2019 10:04:31[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37224
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37224
+[server] New client joined: 37228
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37228,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37228,localport=6666]
+> Join Time: 01.05.2019 10:05:00[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37228
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37228
+[server] New client joined: 37232
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37232,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37232,localport=6666]
+> Join Time: 01.05.2019 10:05:40[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37232
+[server] New client joined: 37234
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37234,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37232,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37234,localport=6666] [transfer][0m
+[server] TransferClient connected! 37234
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37234
+[error] Couldnt send msg to client... Client: 37232
+[error] Couldnt send msg to client... Client: 37234
+[server] New client joined: 37240
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37240,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37240,localport=6666]
+> Join Time: 01.06.2019 10:06:02[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37240
+[server] New client joined: 37242
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37242,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37240,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37242,localport=6666] [transfer][0m
+[server] TransferClient connected! 37242
+[server] [asd]: asd
+[server] [asd]: asd
+[server] [asd]: as
+[server] [asd]: d
+[server] [asd]: asd
+[server] [asd]: saaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37242
+[error] Couldnt send msg to client... Client: 37240
+[error] Couldnt send msg to client... Client: 37242
+[server] New client joined: 37252
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37252,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37252,localport=6666]
+> Join Time: 01.07.2019 10:07:12[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37252
+[server] New client joined: 37254
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37254,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37252,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37254,localport=6666] [transfer][0m
+[server] TransferClient connected! 37254
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[error] Couldnt send msg to client... Client: 37254
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37252
+[error] Couldnt send msg to client... Client: 37254
+[server] New client joined: 37264
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37264,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37264,localport=6666]
+> Join Time: 01.08.2019 10:08:23[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37264
+[server] New client joined: 37266
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37266,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37264,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37266,localport=6666] [transfer][0m
+[server] TransferClient connected! 37266
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[server] Got a download request from: [asd] for ''
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37266
+[error] Couldnt send msg to client... Client: 37264
+[error] Couldnt send msg to client... Client: 37266
+[server] New client joined: 37268
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37268,localport=6666]
+[server] Added client:[0;36m
+> Username: ads
+> Socket: Socket[addr=/192.168.1.213,port=37268,localport=6666]
+> Join Time: 01.10.2019 10:10:20[0m
+[server] [ads]:  Joined the server...
+[server] Client connected! 37268
+[server] New client joined: 37270
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37270,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37268,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37270,localport=6666] [transfer][0m
+[server] TransferClient connected! 37270
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[server] Got a download request from: [ads] for ''
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[error] Couldnt send msg to client... Client: 37270
+[server] [ads]:  Left the server...
+[error] Couldnt send msg to client... Client: 37268
+[error] Couldnt send msg to client... Client: 37270
+[server] New client joined: 37392
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37392,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37392,localport=6666]
+> Join Time: 01.19.2019 10:19:12[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37392
+[server] New client joined: 37394
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37394,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37392,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37394,localport=6666] [transfer][0m
+[server] TransferClient connected! 37394
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37394
+[error] Couldnt send msg to client... Client: 37392
+[error] Couldnt send msg to client... Client: 37394
+[server] New client joined: 37406
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37406,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37406,localport=6666]
+> Join Time: 01.20.2019 10:20:00[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37406
+[server] New client joined: 37408
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37408,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37406,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37408,localport=6666] [transfer][0m
+[server] TransferClient connected! 37408
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37408
+[error] Couldnt send msg to client... Client: 37406
+[error] Couldnt send msg to client... Client: 37408
+[server] New client joined: 37434
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37434,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37434,localport=6666]
+> Join Time: 01.21.2019 10:21:36[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37434
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37434
+[server] New client joined: 37444
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37444,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37444,localport=6666]
+> Join Time: 01.21.2019 10:21:54[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37444
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37444
+[server] New client joined: 37450
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37450,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37450,localport=6666]
+> Join Time: 01.22.2019 10:22:26[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37450
+[server] New client joined: 37452
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37452,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37450,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37452,localport=6666] [transfer][0m
+[server] TransferClient connected! 37452
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37452
+[error] Couldnt send msg to client... Client: 37450
+[error] Couldnt send msg to client... Client: 37452
+[server] New client joined: 37492
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37492,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37492,localport=6666]
+> Join Time: 01.25.2019 10:25:37[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37492
+[server] New client joined: 37494
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37494,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37492,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37494,localport=6666] [transfer][0m
+[server] TransferClient connected! 37494
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[error] Couldnt send msg to client... Client: 37494
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37492
+[error] Couldnt send msg to client... Client: 37494
+[server] New client joined: 37554
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37554,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37554,localport=6666]
+> Join Time: 01.29.2019 10:29:19[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37554
+[server] New client joined: 37556
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37556,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37554,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37556,localport=6666] [transfer][0m
+[server] TransferClient connected! 37556
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[error] Couldnt send msg to client... Client: 37556
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37554
+[error] Couldnt send msg to client... Client: 37556
+[server] New client joined: 37576
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37576,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37576,localport=6666]
+> Join Time: 01.31.2019 10:31:49[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37576
+[server] New client joined: 37578
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37578,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37576,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37578,localport=6666] [transfer][0m
+[server] TransferClient connected! 37578
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37578
+[error] Couldnt send msg to client... Client: 37576
+[error] Couldnt send msg to client... Client: 37578
+[server] New client joined: 37666
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37666,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37666,localport=6666]
+> Join Time: 01.37.2019 10:37:18[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37666
+[server] New client joined: 37668
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37668,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37666,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37668,localport=6666] [transfer][0m
+[server] TransferClient connected! 37668
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37668
+[error] Couldnt send msg to client... Client: 37666
+[error] Couldnt send msg to client... Client: 37668
+[server] New client joined: 37740
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37740,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37740,localport=6666]
+> Join Time: 01.42.2019 10:42:43[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37740
+[server] New client joined: 37742
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37742,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37740,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37742,localport=6666] [transfer][0m
+[server] TransferClient connected! 37742
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37742
+[error] Couldnt send msg to client... Client: 37740
+[error] Couldnt send msg to client... Client: 37742

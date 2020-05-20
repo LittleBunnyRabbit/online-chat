@@ -1,0 +1,22 @@
+[server] Creating server
+[server] Listening for a client...
+[server] New client joined: 37968
+[server] Setting up client: Socket[addr=/192.168.1.213,port=37968,localport=6666]
+[server] Added client:[0;36m
+> Username: asd
+> Socket: Socket[addr=/192.168.1.213,port=37968,localport=6666]
+> Join Time: 01.03.2019 11:03:32[0m
+[server] [asd]:  Joined the server...
+[server] Client connected! 37968
+[server] New client joined: 37970
+[server] Setting up transfer client: Socket[addr=/192.168.1.213,port=37970,localport=6666]
+[server] Linked Clients:[0;36m
+> Socket[addr=/192.168.1.213,port=37968,localport=6666] [client]
+> Socket[addr=/192.168.1.213,port=37970,localport=6666] [transfer][0m
+[server] TransferClient connected! 37970
+[error] Problem when reading a msg
+[error] Problem when reading a msg
+[server] [asd]:  Left the server...
+[error] Couldnt send msg to client... Client: 37970
+[error] Couldnt send msg to client... Client: 37968
+[error] Couldnt send msg to client... Client: 37970
